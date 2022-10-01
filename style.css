@@ -20,6 +20,12 @@ h3 {
     color: rgb(0, 43, 51);
     font-family: 'Bitter', serif;
 }
+
+p {
+    text-align: center;
+    color: rgb(0, 43, 51);
+    font-family: 'Bitter', serif;
+}
 @media only screen and (max-width: 600px){
     h1 {
         margin-top: 6%;
@@ -34,6 +40,13 @@ h3 {
         color: rgb(0, 43, 51);
         font-family: 'Bitter', serif;
         font-size: 6vw;
+    }
+    p {
+        text-align: center;
+        color: rgb(0, 43, 51);
+        font-family: 'Bitter', serif;
+        margin: auto;
+        font-size: 4vw;
     }
 }
 
