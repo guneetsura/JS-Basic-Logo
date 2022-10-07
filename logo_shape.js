@@ -1,6 +1,4 @@
-
-var colorPalette = [
-    {
+var colorPalette = [{
         'r': '#071A52',
         'c': '#086972',
         't': '#17B978',
@@ -50,157 +48,83 @@ var colorPalette = [
     }
 ];
 
-// var rotationB = 0;
-var rotationF = 0;
-var rotationF1 = 0;
-var rotationF2 = 0;
-var rotationF3 = 0;
-var rotationF4 = 0;
+//rotations reset
+const rotations = [];
+for (let i = 0; i < 5; ++i) {
+    rotations[i] = 0;
+}
 
+const generateBDegrees = [];
+const rects = [];
+const circs = [];
+const texts = [];
 
 // assigning color to shapes 
-var rect = document.querySelector(".rectangle");
-var circ = document.querySelector(".circle");
-var text = document.querySelector(".intext");
+for (let i = 0; i < 5; ++i) {
+    rects[i] = document.querySelector(".rectangle" + i);
+    circs[i] = document.querySelector(".circle" + i);
+    texts[i] = document.querySelector(".intext" + i);
+}
 
-var rect1 = document.querySelector(".rectangle1");
-var circ1 = document.querySelector(".circle1");
-var text1 = document.querySelector(".intext1");
-
-var rect2 = document.querySelector(".rectangle2");
-var circ2 = document.querySelector(".circle2");
-var text2 = document.querySelector(".intext2");
-
-var rect3 = document.querySelector(".rectangle3");
-var circ3 = document.querySelector(".circle3");
-var text3 = document.querySelector(".intext3");
-
-var rect4 = document.querySelector(".rectangle4");
-var circ4 = document.querySelector(".circle4");
-var text4 = document.querySelector(".intext4");
 
 // onclick
 function generateLogo() {
-    var i = Math.floor(Math.random() * 8);
-    rect.style.fill = colorPalette[i].r;
-    circ.style.fill = colorPalette[i].c;
-    text.style.fill = colorPalette[i].b;
 
-    var i1 = Math.floor(Math.random() * 8);
-    rect1.style.fill = colorPalette[i1].r;
-    circ1.style.fill = colorPalette[i1].c;
-    text1.style.fill = colorPalette[i1].b;
-
-    var i2 = Math.floor(Math.random() * 8);
-    rect2.style.fill = colorPalette[i2].r;
-    circ2.style.fill = colorPalette[i2].c;
-    text2.style.fill = colorPalette[i2].b;
-
-    var i3 = Math.floor(Math.random() * 8);
-    rect3.style.fill = colorPalette[i3].r;
-    circ3.style.fill = colorPalette[i3].c;
-    text3.style.fill = colorPalette[i3].b;
-
-    var i4 = Math.floor(Math.random() * 8);
-    rect4.style.fill = colorPalette[i4].r;
-    circ4.style.fill = colorPalette[i4].c;
-    text4.style.fill = colorPalette[i4].b;
+    var j;
+    for (let i = 0; i < rects.length; ++i) {
+        j = Math.floor(Math.random() * 8);
+        rects[i].style.fill = colorPalette[j].r;
+        circs[i].style.fill = colorPalette[j].c;
+        texts[i].style.fill = colorPalette[j].b;
+    }
 
     // rotation for shape placed at back 
-    var generateBDegree = Math.floor(Math.random() * 46);
-    rotationF += generateBDegree;
+    for (let i = 0; i < rects.length; ++i) {
+        generateBDegrees[i] = Math.floor(Math.random() * 46);
+        rotations[i] += generateBDegrees[i];
+    }
 
-    var generateBDegree1 = Math.floor(Math.random() * 46);
-    rotationF1 += generateBDegree1;
-    
-    var generateBDegree2 = Math.floor(Math.random() * 46);
-    rotationF2 += generateBDegree2;
-    
-    var generateBDegree3 = Math.floor(Math.random() * 46);
-    rotationF3 += generateBDegree3;
-
-    var generateBDegree4 = Math.floor(Math.random() * 46);
-    rotationF4 += generateBDegree4;
-
-    rect.style.transformOrigin = "50 50";
-    rect.style.transform = 'rotate(' + generateBDegree + 'deg)';
-
-    rect1.style.transformOrigin = "50 50";
-    rect1.style.transform = 'rotate(' + generateBDegree1 + 'deg)';
-
-    rect2.style.transformOrigin = "50 50";
-    rect2.style.transform = 'rotate(' + generateBDegree2 + 'deg)';
-
-    rect3.style.transformOrigin = "50 50";
-    rect3.style.transform = 'rotate(' + generateBDegree3 + 'deg)';
-
-    rect4.style.transformOrigin = "50 50";
-    rect4.style.transform = 'rotate(' + generateBDegree4 + 'deg)';
+    for (let i = 0; i < rects.length; ++i) {
+        rects[i].style.transformOrigin = "50 50";
+        rects[i].style.transform = 'rotate(' + generateBDegrees[i] + 'deg)';
+    }
 
     // generating random value for border radius
     var borderRad = Math.floor(Math.random() * 21);
-
     // setting border radius for x and y axis
-    if (generateBDegree % 2 != 0 && generateBDegree1 % 2 != 0 && generateBDegree2 % 2 != 0 && generateBDegree3 % 2 != 0 && generateBDegree4 % 2 != 0 ) {
+    if (generateBDegrees[0] % 2 != 0 && generateBDegrees[1] % 2 != 0 && generateBDegrees[2] % 2 != 0 && generateBDegrees[3] % 2 != 0 && generateBDegrees[4] % 2 != 0) {
         borderRad = 0;
     }
-    
-    rect.style.rx = borderRad;
-    rect.style.ry = borderRad;
 
-    rect1.style.rx = borderRad;
-    rect1.style.ry = borderRad;
+    for (let i = 0; i < rects.length; ++i) {
+        rects[i].style.rx = borderRad;
+        rects[i].style.ry = borderRad;
+    }
 
-    rect2.style.rx = borderRad;
-    rect2.style.ry = borderRad;
-
-    rect3.style.rx = borderRad;
-    rect3.style.ry = borderRad;
-
-    rect4.style.rx = borderRad;
-    rect4.style.ry = borderRad;
-    
 }
 
 function resetLogo() {
 
-    //removing colors from rectangle
-    rect.style.fill = "transparent";
-    rect1.style.fill = "transparent";
-    rect2.style.fill = "transparent";
-    rect3.style.fill = "transparent";
-    rect4.style.fill = "transparent";
-
-    //removing colors from circle
-    circ.style.fill = "transparent";
-    circ1.style.fill = "transparent";
-    circ2.style.fill = "transparent";
-    circ3.style.fill = "transparent";
-    circ4.style.fill = "transparent";
+    //removing colors from rectangle and circle
+    for (let i = 0; i < rects.length; ++i) {
+        rects[i].style.fill = "transparent";
+        circs[i].style.fill = "transparent";
+    }
 
     //removing style from text
-    text.style.fill = "black";
-    text1.style.fill = "black";
-    text2.style.fill = "black";
-    text3.style.fill = "black";
-    text4.style.fill = "black";
+    for (let i = 0; i < rects.length; ++i) {
+        texts[i].style.fill = "black";
+    }
+
 
     //removing border radius from rectangle
-    rect.style.rx = "";
-    rect.style.ry = "";
-    rect1.style.rx = "";
-    rect1.style.ry = "";
-    rect2.style.rx = "";
-    rect2.style.ry = "";
-    rect3.style.rx = "";
-    rect3.style.ry = "";
-    rect4.style.rx = "";
-    rect4.style.ry = "";
+    for (let i = 0; i < rects.length; ++i) {
+        rects[i].style.rx = "";
+        rects[i].style.ry = "";
+    }
 
     //removing angle of rotation from rectangle
-    rect.style.transform = "";
-    rect1.style.transform = "";
-    rect2.style.transform = "";
-    rect3.style.transform = "";
-    rect4.style.transform = "";
+    for (let i = 0; i < rects.length; ++i) {
+        rects[i].style.transform = "";
+    }
 }
