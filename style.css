@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
-html,body {
-    margin:0;
-    padding:0;
-    overflow-x:hidden;
- }
 body {
     background-color: aliceblue;
 }
@@ -15,6 +16,7 @@ h1 {
     color: rgb(0, 43, 51);
     font-family: 'Bitter', serif;
 }
+
 h3 {
     text-align: center;
     color: rgb(0, 43, 51);
@@ -26,7 +28,8 @@ p {
     color: rgb(0, 43, 51);
     font-family: 'Bitter', serif;
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 600px) {
     h1 {
         margin-top: 6%;
         text-align: center;
@@ -50,7 +53,7 @@ p {
     }
 }
 
-.intext,
+.intext0,
 .intext1,
 .intext2,
 .intext3,
@@ -58,8 +61,8 @@ p {
     vertical-align: middle;
     display: inline-block;
 }
- 
-.rectangle,
+
+.rectangle0,
 .rectangle1,
 .rectangle2,
 .rectangle3,
@@ -70,13 +73,14 @@ p {
     transform-box: fill-box;
 }
 
-
 text {
     transform-origin: 50% 50%;
 }
+
 .btns {
     text-align: center;
 }
+
 .button1 {
     width: 140px;
     height: 45px;
@@ -95,7 +99,8 @@ text {
     outline: none;
     display: block;
     margin: auto;
-    }
+}
+
 .button2 {
     width: 140px;
     height: 45px;
@@ -115,114 +120,86 @@ text {
     display: block;
     margin: auto;
 }
-.button1, .button2 {
+
+.button1,
+.button2 {
     display: inline-block;
     text-align: center;
 }
-    @media only screen and (max-width: 600px) {
-        .button1 {
-            width: 140px;
-            height: 45px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            font-weight: 500;
-            color: #000;
-            background-color: rgb(255, 255, 255);
-            border: none;
-            border-radius: 45px;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease 0s;
-            cursor: pointer;
-            outline: none;
-            display: block;
-            margin: auto;
-            margin-bottom: 20px;
-            }
-            .button2 {
-                width: 140px;
-                height: 45px;
-                font-family: 'Roboto', sans-serif;
-                font-size: 10px;
-                text-transform: uppercase;
-                letter-spacing: 2.5px;
-                font-weight: 500;
-                color: #000;
-                background-color: rgb(255, 255, 255);
-                border: none;
-                border-radius: 45px;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease 0s;
-                cursor: pointer;
-                outline: none;
-                display: block;
-                margin: auto;
-            }
+
+@media only screen and (max-width: 600px) {
+    .button1 {
+        width: 140px;
+        height: 45px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
     }
-  .button1:hover {
+    .button2 {
+        width: 140px;
+        height: 45px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        display: block;
+        margin: auto;
+    }
+}
+
+.button1:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
-  }
-  .button2:hover {
+}
+
+.button2:hover {
     /* background-color: #2EE59D; */
     box-shadow: 0px 15px 20px rgba(46, 58, 229, 0.4);
     color: #fff;
     transform: translateY(-7px);
-  }
+}
+
 .img {
     margin: auto;
     padding: 10px;
     display: flex;
     justify-content: center;
 }
+
 @media only screen and (max-width: 600px) {
     .img {
-        display:inline-block;
+        display: inline-block;
         justify-content: center;
         align-items: center;
         margin: auto;
         margin-left: 11%;
     }
 }
+
 .footer {
     padding: 10%;
 }
-/* .rectangle {
-    border:1px solid;
-    height:10%;
-    width:10%;
-    margin: 20px;
-    position: absolute;
-} */
-/* .circle {
-    width: 10%;
-    height: 10%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 1px;
-    position: relative;
-    left: 22px;
-    top: 21px;
-} */
-/* .rectangle p {
-    text-align: center;
-    position: relative;
-    padding: 0;
-    top: 10%;
-} */
-/* .intext {
-    position: relative;
-    padding: 0;
-    bottom:35px;
-    left:65px;
-} */
-/* circle {
-    transform-origin: 50% 50%;
-}  */
-/* rect {
-    transform-origin: 50% 50%;
-} */
