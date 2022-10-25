@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 html,
 body {
     margin: 0;
@@ -7,26 +9,27 @@ body {
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #121212;
+}
+
+h1, h3, p {
+    color: #b384e8;
 }
 
 h1 {
     margin-top: 2%;
     text-align: center;
-    color: rgb(0, 43, 51);
-    font-family: 'Bitter', serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 h3 {
     text-align: center;
-    color: rgb(0, 43, 51);
-    font-family: 'Bitter', serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 p {
     text-align: center;
-    color: rgb(0, 43, 51);
-    font-family: 'Bitter', serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 @media only screen and (max-width: 600px) {
@@ -34,20 +37,20 @@ p {
         margin-top: 6%;
         text-align: center;
         color: rgb(0, 43, 51);
-        font-family: 'Bitter', serif;
+        font-family: 'Nunito', sans-serif;
         font-size: 10vw;
     }
     h3 {
         text-align: center;
         margin: auto;
         color: rgb(0, 43, 51);
-        font-family: 'Bitter', serif;
+        font-family: 'Nunito', sans-serif;
         font-size: 6vw;
     }
     p {
         text-align: center;
         color: rgb(0, 43, 51);
-        font-family: 'Bitter', serif;
+        font-family: 'Nunito', sans-serif;
         margin: auto;
         font-size: 4vw;
     }
